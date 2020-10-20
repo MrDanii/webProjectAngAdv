@@ -1,0 +1,8 @@
+<div class="card-body">
+  <div style="display: block">
+    <h3>"{{titleChart}}"</h3>
+    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+      (chartClick)="chartClicked($event)" [colors]='colors'>
+    </canvas>
+  </div>
+</div>
