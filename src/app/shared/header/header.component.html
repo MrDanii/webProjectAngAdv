@@ -20,7 +20,9 @@
           <!-- dark Logo text -->
           <img src="./assets/images/logo-text.png" alt="homepage" class="dark-logo" />
           <!-- Light Logo text -->
-          <img src="./assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+          <img src="./assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+        </span>
+      </a>
     </div>
     <!-- ============================================================== -->
     <!-- End Logo -->
@@ -48,7 +50,8 @@
             href="javascript:void(0)"><i class="ti-search"></i></a>
           <form class="app-search">
             <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i
-                class="ti-close"></i></a> </form>
+                class="ti-close"></i></a>
+          </form>
         </li>
         <!-- ============================================================== -->
         <!-- Comment -->
@@ -213,7 +216,7 @@
               <li role="separator" class="divider"></li>
               <li><a routerLink='/dashboard/account-settings'><i class="ti-settings"></i> Account Setting</a></li>
               <li role="separator" class="divider"></li>
-              <li><a routerLink="/login"><i class="fa fa-power-off"></i> Logout</a></li>
+              <li><a (click)="logout()" class="cursor"><i class="fa fa-power-off"></i> Logout</a></li>
             </ul>
           </div>
         </li>
