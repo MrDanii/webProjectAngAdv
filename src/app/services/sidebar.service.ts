@@ -16,6 +16,15 @@ export class SidebarService {
         { title: 'Progress Bar', url: 'progress' },
         { title: 'Promesas', url: 'promesas' },
       ]
+    },
+    {
+      title: 'Mantenimientos',
+      icono: 'mdi mdi-folder-lock-open',
+      submenu: [
+        { title: 'Usuarios', url: 'usuarios' },
+        { title: 'Hospitales', url: 'hospitales' },
+        { title: 'Medicos', url: 'medicos' },
+      ]
     }
   ]
 
