@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delay } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
 import { Usuario } from 'src/app/models/usuario.model';
@@ -18,8 +18,8 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class UsuariosComponent implements OnInit, OnDestroy {
 
   public totalUsuarios: number = 0
-  public usuarios: Array<Usuario> = []
-  public usuariosTemp: Array<Usuario> = []
+  public usuarios: Usuario[] = []
+  public usuariosTemp: Usuario[] = []
   public desde: number = 0
   public cargando: boolean = true
 
@@ -70,8 +70,8 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     if (termino.length === 0) {
       return this.usuarios = this.usuariosTemp
     }
-    this._busquedasService.buscar("usuarios", termino).subscribe((resp) => {
-      console.log(resp);
+    this._busquedasService.buscar("usuarios", termino).subscribe((resp: any) => {
+      // console.log(resp);
       this.usuarios = resp
     })
   }
