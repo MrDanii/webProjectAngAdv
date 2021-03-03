@@ -61,7 +61,7 @@ export class MedicosComponent implements OnInit, OnDestroy {
   cargarMedicos() {
     this.cargando = true
     this._medicoService.cargarMedicos().subscribe((resp) => {
-      console.log(resp);
+      // console.log(resp);
       this.medicos = resp
       this.medicosTemp = this.medicos
       this.cargando = false

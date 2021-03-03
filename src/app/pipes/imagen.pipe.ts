@@ -22,7 +22,6 @@ export class ImagenPipe implements PipeTransform {
     } else {
       return `${base_url}/upload/nowhere/no-image`
     }
-    return null;
   }
 
 }

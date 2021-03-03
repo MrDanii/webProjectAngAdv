@@ -20,12 +20,12 @@ export class RegisterComponent implements OnInit {
   public registerForm = this._fb.group({
     // email regular expression. ""example@gmail.com""
     // (?=.*[^\.]$)([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$)$
-    nombre: ['Daniel', [Validators.required, Validators.minLength(2)]],
-    email: ['dan100@gmail.com', [Validators.required, Validators.pattern(
+    nombre: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.pattern(
       new RegExp('(?=.*[^\.]$)([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$)$')
     )]],
-    password: ['1234', [Validators.required, Validators.minLength(4)]],
-    password2: ['1234', [Validators.required, Validators.minLength(4)]],
+    password: ['', [Validators.required, Validators.minLength(4)]],
+    password2: ['', [Validators.required, Validators.minLength(4)]],
     terminos: [true, [Validators.requiredTrue]]
   }, {
     validators: [this.validatorPasswordIguales('password', 'password2')]
