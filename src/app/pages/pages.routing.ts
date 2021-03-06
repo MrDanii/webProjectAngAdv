@@ -25,25 +25,14 @@ const routes: Routes = [
     path: 'dashboard',
     canActivate: [AuthGuard],
     component: PagesComponent,
-    children: [
-      { path: '', component: DashboardComponent, data: { titulo: 'Dashboard' } },
-      { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Account Settings' } },
-      { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Account Settings' } },
-      { path: 'grafica1', component: Grafica1Component, data: { titulo: 'Graphics' } },
-      { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil' } },
-      { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress Bar' } },
-      { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
-      { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
-      // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-
-      // matenimientos
-      { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento de hospitales' } },
-      { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimiento de medicos' } },
-      { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Mantenimiento de medicos' } },
-
-      // admin route
-      { path: 'usuarios', canActivate: [AdminGuard], component: UsuariosComponent, data: { titulo: 'Mantenimiento de usuarios' } },
-    ]
+    // children: []
+    //En vez de tener un arreglo de rutas hijas, para trabajar con lazy load necesitamos utilizar "loadChildren"
+    // Ademas de utilizar las mismas importaciones de pages.routing
+    // imports: [RouterModule.forChild(routes)],
+    // exports: [RouterModule]
+    // guard para lazyLoad
+    canLoad: [AuthGuard],
+    loadChildren: () => import('./child-routes.module').then(m => m.ChildRoutesModule)
   }
 ];
 
